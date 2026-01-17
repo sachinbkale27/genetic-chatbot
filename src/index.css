@@ -1,0 +1,72 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.chat-container {
+  height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  min-width: 300px;
+}
+
+.question-btn {
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.chat-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.messages-area {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.message-bubble {
+  max-width: 80%;
+}
+
+.message-user {
+  background-color: #059669;
+  color: white;
+  border-radius: 1rem 1rem 0.25rem 1rem;
+}
+
+.message-assistant {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #9ca3af;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+.header-gradient {
+  background: linear-gradient(to right, #059669, #0d9488);
+}
