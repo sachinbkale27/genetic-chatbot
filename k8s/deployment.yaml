@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: genetic-chatbot
+  labels:
+    app: genetic-chatbot
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: genetic-chatbot
+  template:
+    metadata:
+      labels:
+        app: genetic-chatbot
+    spec:
+      containers:
+        - name: genetic-chatbot
+          image: genetic-chatbot:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
