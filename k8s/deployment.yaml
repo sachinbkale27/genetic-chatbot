@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: genetic-chatbot
-          image: genetic-chatbot:latest
+          image: 427534510034.dkr.ecr.us-east-1.amazonaws.com/genetic-chatbot:latest
           ports:
             - containerPort: 80
           resources:
