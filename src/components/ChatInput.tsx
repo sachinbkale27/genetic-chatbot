@@ -29,7 +29,7 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
-        placeholder="Ask about genetics..."
+        placeholder="Ask anything about genetics..."
         disabled={disabled}
         rows={4}
         className="form-control"
